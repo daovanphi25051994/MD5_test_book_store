@@ -6,7 +6,7 @@
       <h3>Co {{ quantity }} cuon sach</h3>
     </div>
     <div class="col-md-6">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Them sach moi</button>
+      <a routerLink="book/create" >Them sach moi</a>
     </div>
 
   </div>
@@ -25,26 +25,11 @@
         <td>{{ book.id }}</td>
         <td><a routerLink="/book/{{ book.id }}/detail">{{ book.title }}</a></td>
         <td>{{ book.author }}</td>
-        <td><a class="btn btn-danger" href="">Xoa</a> | <a class="btn btn-warning" routerLink="/book/{{ book.id }}/edit">{{ book.title }}</a></td>
+        <td><a class="btn btn-danger" href="">Xoa</a> | <a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" routerLink="/book/{{ book.id }}/edit">Edit</a></td>
       </tr>
       </tbody>
     </table>
   </div>
 </div>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <app-book-form></app-book-form>
-      </div>
-    </div>
-  </div>
-</div>
 

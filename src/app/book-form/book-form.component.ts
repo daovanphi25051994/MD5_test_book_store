@@ -23,6 +23,12 @@ export class BookFormComponent implements OnInit {
   constructor(private bookService: BookService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe( params => {
+      this.bookId = params.id;
+      this.bookService.getById(this.bookId).subscribe( result => {
+        this.bookForm.setValue(result);
+      });
+    });
   }
 
   onSubmit(): void {
