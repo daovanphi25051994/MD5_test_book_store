@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {IBook} from './ibook';
 
 const API_URL = 'http://localhost:3000/books';
@@ -9,6 +9,8 @@ const API_URL = 'http://localhost:3000/books';
   providedIn: 'root'
 })
 export class BookService {
+
+  shouldRefresh = new Subject<any>();
 
   constructor(private http: HttpClient) {
   }

@@ -1,1 +1,20 @@
-<p>book-form works!</p>
+<div class="alert alert-success" role="alert" *ngIf="isShowSuccess">
+  {{ message }}
+</div>
+
+<form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="id" />
+  <div class="form-group">
+    <label for="user-name">Tieu de</label>
+    <input type="text" class="form-control" id="user-name" placeholder="User name" formControlName="title">
+  </div>
+  <div class="form-group">
+    <label for="password">Tac gia</label>
+    <input type="text" class="form-control" id="password" placeholder="Password" formControlName="author">
+  </div>
+  <div class="form-group">
+    <label for="phone-number">Mo ta</label>
+    <input type="email" class="form-control" id="phone-number" formControlName="description">
+  </div>
+  <button class="btn btn-primary">Save</button>
+</form>
