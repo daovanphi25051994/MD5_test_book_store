@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <p>Chi tiet Sach</p>
+  </div>
+  <div class="col-md-6">
+    <a class="btn btn-primary" href="">Xem danh sach</a>
+  </div>
+</div>
+
+<div *ngIf="book; else nothing">
+  <h4>
+   Ten Sach: {{book.title}}
+  </h4>
+  <p>
+   Tac Gia: {{book.author}}
+  </p>
+  <p>
+   Mo Ta:  {{book.description}}
+  </p>
+</div>
+
+<ng-template #nothing>
+  <p>Nothing to show</p>
+</ng-template>

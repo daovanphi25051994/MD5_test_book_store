@@ -1,0 +1,34 @@
+
+<h2>Danh sach cac cuon sach</h2>
+<div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Co {{ quantity }} cuon sach</h3>
+    </div>
+    <div class="col-md-6">
+      <button class="btn btn-primary">Them sach moi</button>
+    </div>
+
+  </div>
+  <div>
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Ten sach</th>
+        <th>Tac gia</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.id }}</td>
+        <td><a routerLink="/book/{{ book.id }}/detail">{{ book.title }}</a></td>
+        <td>{{ book.author }}</td>
+        <td><a class="btn btn-danger" href="">Xoa</a> | <a class="btn btn-warning" href="">Sua</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
