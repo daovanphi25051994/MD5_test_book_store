@@ -32,6 +32,7 @@ export class BookFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.bookId);
     if (this.bookId) {
       this.bookService.updateBook(this.bookForm.value).subscribe( result => {
         this.isShowSuccess = true;

@@ -22,6 +22,19 @@ export class BookListComponent implements OnInit {
     }, () => {
       console.log('complete');
     });
+    this.bookService.shouldRefresh.subscribe(result => {
+      this.bookService.getBooks().subscribe(results => {
+        this.books = results;
+        this.quantity = this.books.length;
+      }, error => {
+        this.books = [];
+      });
+    });
   }
 
+  deleteBook(id: number) {
+      this.bookService.deleteBook(id).subscribe( () => {
+        this.bookService.shouldRefresh.next();
+      });
+  }
 }

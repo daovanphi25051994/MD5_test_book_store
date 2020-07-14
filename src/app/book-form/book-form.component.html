@@ -4,7 +4,7 @@
 <h2>Thêm sách mới</h2>
 
 <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
-  <input type="hidden" formControlName="id" />
+  <input type="hidden" formControlName="id">
   <div class="form-group">
     <label for="title">Tên : </label>
     <input type="text" class="form-control" id="title" formControlName="title">
@@ -17,5 +17,6 @@
     <label for="description">Mô Tả :</label>
     <textarea type="text" class="form-control" id="description" formControlName="description"></textarea>
   </div>
-  <button class="btn btn-primary">Save</button>
+  <button class="btn btn-primary">Submit</button>
+  <a class="btn btn-primary" routerLink="">Thoát</a>
 </form>

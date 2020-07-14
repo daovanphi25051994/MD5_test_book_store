@@ -6,7 +6,7 @@
       <h3>Co {{ quantity }} cuon sach</h3>
     </div>
     <div class="col-md-6">
-      <a routerLink="book/create" >Them sach moi</a>
+      <a class="btn btn-primary" routerLink="book/create" >Them sach moi</a>
     </div>
 
   </div>
@@ -25,7 +25,8 @@
         <td>{{ book.id }}</td>
         <td><a routerLink="/book/{{ book.id }}/detail">{{ book.title }}</a></td>
         <td>{{ book.author }}</td>
-        <td><a class="btn btn-danger" href="">Xoa</a> | <a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" routerLink="/book/{{ book.id }}/edit">Edit</a></td>
+        <td>    <button class="btn btn-danger" (click)="deleteBook(book.id)"> Xóa</button>
+          | <a class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" routerLink="/book/{{ book.id }}/edit">Edit</a></td>
       </tr>
       </tbody>
     </table>
