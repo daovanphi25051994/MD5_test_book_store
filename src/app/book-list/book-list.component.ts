@@ -33,8 +33,10 @@ export class BookListComponent implements OnInit {
   }
 
   deleteBook(id: number) {
+    if (confirm("Bạn có muốn xóa không ?")){
       this.bookService.deleteBook(id).subscribe( () => {
         this.bookService.shouldRefresh.next();
       });
+    }
   }
 }
